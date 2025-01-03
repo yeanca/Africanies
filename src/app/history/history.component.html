@@ -1,0 +1,49 @@
+<div class="bg-white p-4 rounded shadow">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-gray-600">SHIPPING LIST</h3>
+      <a class="text-green-600" [routerLink]="['/history']">View All</a>
+    </div>
+    <table class="w-full text-left">
+      <thead>
+        <tr>
+          <th class="py-2">TRACKING ID</th>
+          <th class="py-2">COURIER</th>
+          <th class="py-2">CATEGORY</th>
+          <th class="py-2">SHIPPING DATE</th>
+          <th class="py-2">DESTINATION</th>
+          <th class="py-2">WEIGHT</th>
+          <th class="py-2">COST</th>
+          <th class="py-2">STATUS</th>
+          <th class="py-2">ACTION</th>
+        </tr>
+   </thead>
+      <tbody>
+          @for (shipment of shippingHistory; track shipment.trackingId) {
+             <tr>
+            <td class="py-2">{{ shipment.trackingId }}</td>
+            <td class="py-2">{{ shipment.courier }}</td>
+            <td class="py-2">{{ shipment.category }}</td>
+            <td class="py-2">{{ shipment.shippingDate | date }}</td>
+            <td class="py-2">{{ shipment.destination }}</td>
+            <td class="py-2">{{ shipment.weight }}</td>
+            <td class="py-2">{{ shipment.cost |currency }}</td>
+            <td class="py-2">
+              <span [ngClass]="{
+                'bg-purple-200 text-purple-600': shipment.status === 1,
+                'bg-yellow-200 text-yellow-600': shipment.status === 2,
+                'bg-green-200 text-green-600': shipment.status === 3,
+                'bg-red-200 text-red-600': shipment.status === 4
+              }" class="px-2 py-1 rounded-full">
+                {{ shipment.status === 1 ? 'Sorting' : shipment.status === 2 ? 'In Transit' : shipment.status === 3 ? 'Delivered' : 'Returned' }}
+              </span>
+            </td>
+            <td class="py-2">
+              <i class="fas fa-ellipsis-h"></i>
+            </td>
+        </tr>
+          } @empty {
+            <td colspan="8" class="py-2">There are no shipments.</td>
+          }
+      </tbody>
+    </table>
+  </div>

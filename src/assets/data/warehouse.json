@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "title": "Los Angeles Warehouse",
+      "address": "1234 Sunset Boulevard, Los Angeles, CA 90026",
+      "country": "USA"
+    },
+    {
+      "id": 2,
+      "title": "New York Warehouse",
+      "address": "5678 Broadway Street, New York, NY 10001",
+      "country": "USA"
+    },
+    {
+      "id": 3,
+      "title": "Chicago Warehouse",
+      "address": "91011 Wacker Drive, Chicago, IL 60601",
+      "country": "USA"
+    },
+    {
+      "id": 4,
+      "title": "Dallas Warehouse",
+      "address": "1213 Elm Street, Dallas, TX 75201",
+      "country": "USA"
+    },
+    {
+      "id": 5,
+      "title": "Seattle Warehouse",
+      "address": "1415 Pine Street, Seattle, WA 98101",
+      "country": "USA"
+    },
+    {
+      "id": 6,
+      "title": "Ikeja Warehouse",
+      "address": "No. 30 Yedseram Street, Adeniyi Jones, Ikeja, Lagos",
+      "country": "Nigeria"
+    },
+    {
+      "id": 7,
+      "title": "Abuja Warehouse",
+      "address": "Suite 45, Garki Shopping Plaza, Garki, Abuja",
+      "country": "Nigeria"
+    },
+    {
+      "id": 8,
+      "title": "Port Harcourt Warehouse",
+      "address": "No. 2 Elelenwo Street, Trans Amadi, Port Harcourt",
+      "country": "Nigeria"
+    }
+  ]
+  

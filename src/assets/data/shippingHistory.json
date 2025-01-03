@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "trackingId": "#TVR-001",
+      "courier": "Not Selected",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "18.5kg",
+      "cost": 2198,
+      "status": 1
+    },
+    {
+      "id": 2,
+      "trackingId": "#TVR-002",
+      "courier": "DHL, Express",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "18.5kg",
+      "cost": 2198,
+      "status": 2
+    },
+    {
+      "id": 3,
+      "trackingId": "#TVR-003",
+      "courier": "USPS",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "12.5kg",
+      "cost": 2198,
+      "status": 3
+    },
+    {
+      "id": 3,
+      "trackingId": "#TVR-003",
+      "courier": "USPS",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "12.5kg",
+      "cost": 2198,
+      "status": 3
+    },
+    {
+      "id": 3,
+      "trackingId": "#TVR-003",
+      "courier": "USPS",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "12.5kg",
+      "cost": 2198,
+      "status": 3
+    }
+  ]

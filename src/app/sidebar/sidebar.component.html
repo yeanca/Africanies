@@ -1,0 +1,70 @@
+ <div class="sidebar bg-white w-64 p-4 flex flex-col">
+    <div class="flex items-center mb-8">
+     <img alt="Company Logo" class="w-10 h-10 mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/ubsyBFiR6Po5KxeZzFfHvhYJMXV8OcZNwcoGXV3BmqZEmRAUA.jpg" width="50"/>
+     <div>
+      <h1 class="text-lg font-bold">
+       AFRICAN IMPORT &amp; EXPORT SOLUTIONS
+      </h1>
+     </div>
+    </div>
+    <nav class="flex-1 text-gray-600">
+     <ul>
+      <li class="mb-4">
+       <a class="flex items-center p-2 bg-green-700 rounded" href="#">
+        <i class="fas fa-tachometer-alt mr-2">
+        </i>
+        Dashboard
+       </a>
+      </li>
+      <li class="mb-4">
+       <a class="flex items-center p-2 rounded-full" href="#">
+        <i class="fas fa-shipping-fast mr-2">
+        </i>
+        Shipment
+       </a>
+      </li>
+      <li class="mb-4">
+       <a class="flex items-center p-2 rounded-full" href="#">
+        <i class="fas fa-box-open mr-2">
+        </i>
+        Deliveries
+       </a>
+      </li>
+      <li class="mb-4">
+       <a class="flex items-center p-2 rounded-full" href="#">
+        <i class="fas fa-chart-line mr-2">
+        </i>
+        Analytics
+       </a>
+      </li>
+      <li class="mb-4">
+       <a class="flex items-center p-2 rounded-full" href="#">
+        <i class="fas fa-bell mr-2">
+        </i>
+        Notifications
+        <span class="ml-auto bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+         10
+        </span>
+       </a>
+      </li>
+     </ul>
+    </nav>
+    <div class="mt-auto">
+     <a class="flex items-center p-2 rounded-full" href="#">
+      <i class="fas fa-cog mr-2">
+      </i>
+      Settings
+     </a>
+     <div class="flex items-center mt-4">
+      <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" height="40" src="{{user.avatar}}" width="40"/>
+      <div>
+       <p class="text-sm">
+        {{user.firstname + ' '+ user.lastname}}
+       </p>
+       <p class="text-xs text-gray-300">
+         {{user.email}}
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>

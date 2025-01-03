@@ -1,0 +1,109 @@
+<div class="mb-6">
+    <h2 class="text-2xl font-bold"> Hi, Pierce. </h2>
+    <p class="text-gray-600"> See all your shipment Overview here. </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <app-card title="TOTAL REVENUE" value="$1,580.67" change="+10,774 vs last month" percentage="18" [isPositive]="true"></app-card>
+    <app-card title="TOTAL SHIPMENT" value="12,768" change="+6,774 vs last month" percentage="18" [isPositive]="true"></app-card>
+    <app-card title="TOTAL DELIVERIES" value="1,580" change="+1,074 vs last month" percentage="18" [isPositive]="false"></app-card>
+    <app-card title="TOTAL TRANSACTION" value=" 45,120" change="-774 vs last month" percentage="5" [isPositive]="false"></app-card>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+    <div class="bg-gray-800 text-white p-4 rounded shadow">
+     <h3 class="text-gray-400">
+      SHIPMENT DELIVERED
+     </h3>
+     <p class="text-2xl font-bold">
+      10,567
+     </p>
+     <p class="text-green-500">
+      +10,774 vs last month
+      <i class="fas fa-arrow-up">
+      </i>
+      18%
+     </p>
+     <div class="mt-4">
+      <p class="text-gray-400">
+       Afr Air Basic
+      </p>
+      <p class="text-gray-400">
+       0%
+      </p>
+      <p class="text-gray-400">
+       Afr Air Standard
+      </p>
+      <p class="text-gray-400">
+       0%
+      </p>
+      <p class="text-gray-400">
+       Afr Ocean Basic
+      </p>
+      <p class="text-gray-400">
+       0%
+      </p>
+      <p class="text-gray-400">
+       Afr Ocean Basic
+      </p>
+      <p class="text-gray-400">
+       0%
+      </p>
+     </div>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+     <h3 class="text-gray-600 font-bold">
+      DELIVERY RATE
+     </h3>
+     <p class="text-2xl font-bold">
+      98.6%
+     </p>
+     <p class="text-green-500">
+      +0.5% vs last month
+      <i class="fas fa-arrow-up">
+      </i>
+      18%
+     </p>
+     <div class="mt-4">
+      <img alt="Heatmap showing delivery rate over months" height="100" src="https://storage.googleapis.com/a1aa/image/Dbk48dSCji4DJNhQOo4ptVOBPhTqNkbVaKtz0TPu3Z8hZEAF.jpg" width="200"/>
+     </div>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+      <h3 class="text-gray-600 font-bold">
+        OUR WAREHOUSES
+      </h3>
+      <p></p>
+      <select class="w-full p-2 border rounded mb-4" 
+      [value]="selectedWarehouseId"  (change)="updateSelectedWarehouse($event)">
+      @for (warehouse of warehouse; track warehouse.id) {
+        <option [value]="warehouse.id">{{warehouse.title}}</option>
+      }
+    </select>
+    <div *ngIf="selectedWarehouse">
+      <p class="text-gray-600">
+       <span class="font-bold">{{selectedWarehouse.title}} </span>  <i class="fa fa-clone" ></i>
+      </p>
+      <p class="text-gray-600">
+        {{selectedWarehouse.address + ', ' + selectedWarehouse.country + '.'}}
+      </p>
+      <a class="text-green-600" href="#">
+        View On Map
+      </a>
+    </div>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+     <h3 class="text-gray-600 font-bold">
+      TOP ADDRESSES
+     </h3>
+     @for (warehouse of shuffledWarehouse; track warehouse.id) {
+     <h3 class="text-gray-600 font-bold">
+      {{warehouse.title}}
+     </h3>
+     <p class="text-gray-600">
+      {{warehouse.address +', '+ warehouse.country +'.'}}
+     </p>
+     <hr>
+    }@empty {
+      <p class="text-gray-600">There are no warehouse.</p>
+    }
+    </div>
+   </div>
+<app-history></app-history>

@@ -1,0 +1,6 @@
+.main-content {
+    margin-left: 256px;
+    padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+}
