@@ -1,7 +1,14 @@
 <body class="bg-gray-100 font-inter antialiased">
+  <button
+    class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-green-700 text-white rounded-full"
+    (click)="toggleSidebar()"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+
   <div class="flex h-screen">
-    <app-sidebar [user]="user"></app-sidebar>
-    <div class=" main-content flex-1 p-6">
+    <app-sidebar [user]="user"[ngClass]="{ '-translate-x-full': !sidebarVisible, 'translate-x-0': sidebarVisible }"class="z-40 transition-transform transform lg:translate-x-0"></app-sidebar>
+    <div class="main-content flex-1 p-6">
       <app-header></app-header>
       <router-outlet></router-outlet>
     </div>

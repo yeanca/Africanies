@@ -1,27 +1,106 @@
-# Africanies
+# Africanies Shipping managemnet App
+## Overview
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+This is a simple Angular app built for a developer role take-home assignment. It includes:
 
-## Development server
+A Dashboard showing shipping information.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+An Add Shipment feature where users can input shipment details using a multistep form.
 
-## Code scaffolding
+This document will help you set up and run the app.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
+
+## Dashboard
+
+Shows key information:
+
+Total Revenue, Total Shipments, Total Deliveries, Total Transactions
+
+Charts: Shipments Delivered and Delivery Rate
+
+Dropdown for Our Warehouses: Select and copy warehouse addresses
+
+Top Addresses: Displays 5 frequently used addresses
+
+Recent Shipping List: A table showing shipments with details like status, destination, source, and weight
+
+Reusable Components: Metric cards
+
+Fully responsive for all screen sizes
+
+## Add Shipment
+
+A multistep form with validation to add new shipments.
+Reusable Components: Address form
+
+## Prerequisites
+
+Install Node.js (version 14 or higher)
+
+Install Angular CLI
+
+To check installation, run these in your terminal:
+
+`node -v`
+`ng version`
+
+## Setup
+
+## Download/Clone Project:
+
+git clone [Africanies](https://github.com/yeanca/Africanies/)
+
+## Open Project Folder:
+
+`cd Africanies`
+
+## Install Dependencies:
+
+`npm install`
+
+## Run the App
+
+## Start the server:
+
+`ng serve`
+
+## Open in your browser:
+
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Key Files
+
+src/app: Main app code (Dashboard and Add Shipment components)
+
+src/assets/data/**: JSON files with dummy data
+
+src/app/services/shipping-service: API key for fetching country list (uncomment before use)
+
+## Additional Info
+
+Angular Version: version 17.3.7.
+
+Styling: Tailwind CSS
+
+Data: Mostly from assets folder; countries fetched from [CountryStateCity](https://api.countrystatecity.in)
+
+Status: The app uses dummy data and is not fully complete (out of scope for this test).
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Troubleshooting
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+"Command not found" errors: Install Node.js and Angular CLI
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
+App not loading: Ensure the server is running (ng serve) and visit http://localhost:
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Conclusion
+
+This app demonstrates Angular development skills. Please share any feedback or questions!
+

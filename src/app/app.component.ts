@@ -4,21 +4,29 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthService } from './services/auth.service';
 import { User } from './models/user';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,SidebarComponent,HeaderComponent],
+  imports: [CommonModule, RouterOutlet, SidebarComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Africanies';
-  user:User;
-  constructor(private authService:AuthService){}
+  user: User;
+  sidebarVisible = false;
+
+  constructor(private authService: AuthService) { }
+
   ngOnInit(): void {
-    this.authService.fetchUser().subscribe(response=>{
-      this.user=response;
+    this.authService.fetchUser().subscribe(response => {
+      this.user = response;
     })
+  }
+
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
   }
 }

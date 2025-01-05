@@ -1,123 +1,139 @@
-<div>
-  <h2 class="text-lg font-semibold mb-4">
-   PICKUP FROM
-  </h2>
+<form [formGroup]="addressForm">
+  <h2 class="text-lg font-semibold mb-4">{{ title }}</h2>
+
+  <!-- Saved Address -->
   <div class="mb-4">
-   <label class="block text-gray-700">
-    Saved Address
-   </label>
-   <select class="w-full p-2 border rounded-lg">
-    <option>
-     43E, Malcolm Road
-    </option>
-   </select>
-  </div>
-  <h3 class="text-md font-semibold mb-2">
-   Add New Sender
-  </h3>
-  <div class="mb-4">
-   <label class="block text-gray-700">
-    Country
-   </label>
-   <div class="flex items-center">
-    <img alt="Nigeria Flag" class="h-5 w-5 mr-2" height="20" src="../../../assets/img/NGN.png" width="20"/>
-    <select class="w-full p-2 border rounded-lg">
-     <option>
-      Nigeria
-     </option>
+    <label class="block text-gray-700">Saved Address</label>
+    <select formControlName="savedAddress" class="w-full p-2 border rounded-lg">
+      <option value="43E, Malcolm Road">43E, Malcolm Road</option>
     </select>
-   </div>
+    <small *ngIf="addressForm.get('savedAddress')?.invalid && addressForm.get('savedAddress')?.touched" class="text-red-500">
+      Please select a saved address.
+    </small>
   </div>
+
+  <h3 class="text-md font-semibold mb-2">Add New Sender</h3>
+
+  <!-- Country -->
   <div class="mb-4">
-   <label class="block text-gray-700">
-    State
-   </label>
-   <select class="w-full p-2 border rounded-lg">
-    <option>
-     Lagos
-    </option>
-   </select>
+    <label class="block text-gray-700">Country</label>
+    <div class="flex items-center">
+      <img *ngIf="selectedCountryIso2.length>0" alt="Country Flag" class="h-5 w-5 mr-2" [src]="'https://flagsapi.com/' + selectedCountryIso2 + '/flat/64.png'"  />
+      <select formControlName="country" class="w-full p-2 border rounded-lg" (change)="getStates($event)">
+        @for (country of countryList; track country.id) {
+          <option [value]="country.id">{{country.name}}</option>
+        }
+      </select>
+
+    </div>
+    <small *ngIf="addressForm.get('country')?.invalid && addressForm.get('country')?.touched" class="text-red-500">
+      Please select a country.
+    </small>
   </div>
+
+  <!-- State -->
+  <div class="mb-4">
+    <label class="block text-gray-700">State</label>
+    <select formControlName="state" class="w-full p-2 border rounded-lg" (change)="getCities($event)">
+      @for (country of stateList; track country.id) {
+        <option [value]="country.id">{{country.name}}</option>
+      }
+    </select>
+    <small *ngIf="addressForm.get('state')?.invalid && addressForm.get('state')?.touched" class="text-red-500">
+      Please select a state.
+    </small>
+  </div>
+
+  <!-- Origin Charges -->
   <div class="mb-4 flex items-center">
-   <input class="mr-2" type="checkbox"/>
-   <label class="text-gray-500">
-    Origin charges included (Recommended)
-   </label>
+    <input formControlName="originChargesIncluded" class="mr-2" type="checkbox" />
+    <label class="text-gray-500">Origin charges included (Recommended)</label>
   </div>
+
+  <!-- Full Name -->
   <div class="mb-4">
-   <label class="block text-gray-700">
-    Full Name or Company Name
-   </label>
-   <input class="w-full p-2 border rounded-lg" type="text" value="Aventis Corp."/>
+    <label class="block text-gray-700">Full Name or Company Name</label>
+    <input formControlName="fullName" class="w-full p-2 border rounded-lg" type="text" />
+    <small *ngIf="addressForm.get('fullName')?.invalid && addressForm.get('fullName')?.touched" class="text-red-500">
+      Full name is required.
+    </small>
   </div>
+
+  <!-- Contact Name -->
   <div class="mb-4">
-   <label class="block text-gray-700">
-    Contact Name (Optional)
-   </label>
-   <input class="w-full p-2 border rounded-lg" type="text" value="Abraham Lin"/>
+    <label class="block text-gray-700">Contact Name (Optional)</label>
+    <input formControlName="contactName" class="w-full p-2 border rounded-lg" type="text" />
   </div>
+
+  <!-- Address -->
   <div class="mb-4">
-   <label class="block text-gray-700">
-    Address
-   </label>
-   <input class="w-full p-2 border rounded-lg" type="text" value="43E, Malcolm Road"/>
+    <label class="block text-gray-700">Address</label>
+    <input formControlName="address" class="w-full p-2 border rounded-lg" type="text" />
+    <small *ngIf="addressForm.get('address')?.invalid && addressForm.get('address')?.touched" class="text-red-500">
+      Address is required.
+    </small>
   </div>
+
+  <!-- Residential Address -->
   <div class="mb-4 flex items-center">
-   <input class="mr-2" type="checkbox"/>
-   <label class="text-gray-500">
-    This is a residential address
-   </label>
+    <input formControlName="isResidential" class="mr-2" type="checkbox" />
+    <label class="text-gray-500">This is a residential address</label>
   </div>
+
+  <!-- City, Postal Code, Other Info -->
   <div class="mb-4 grid grid-cols-3 gap-4">
-   <div>
-    <label class="block text-gray-700">
-     City
-    </label>
-    <select class="w-full p-2 border rounded-lg">
-     <option>
-      Ikeja
-     </option>
-    </select>
-   </div>
-   <div>
-    <label class="block text-gray-700">
-     Postal Code
-    </label>
-    <input class="w-full p-2 border rounded-lg" type="text" value="100213"/>
-   </div>
-   <div>
-    <label class="block text-gray-700">
-     Other Address Info
-    </label>
-    <input class="w-full p-2 border rounded-lg" placeholder="Enter address" type="text"/>
-   </div>
+    <div>
+      <label class="block text-gray-700">City</label>
+      <select formControlName="city" class="w-full p-2 border rounded-lg">
+        @for (country of cityList; track country.id) {
+          <option [value]="country.id">{{country.name}}</option>
+        } 
+      </select>
+      <small *ngIf="addressForm.get('city')?.invalid && addressForm.get('city')?.touched" class="text-red-500">
+        Please select a city.
+      </small>
+    </div>
+    <div>
+      <label class="block text-gray-700">Postal Code</label>
+      <input formControlName="postalCode" class="w-full p-2 border rounded-lg" type="text" />
+      <small *ngIf="addressForm.get('postalCode')?.invalid && addressForm.get('postalCode')?.touched" class="text-red-500">
+        Postal code is required.
+      </small>
+    </div>
+    <div>
+      <label class="block text-gray-700">Other Address Info</label>
+      <input formControlName="otherInfo" class="w-full p-2 border rounded-lg" type="text" placeholder="Enter address" />
+    </div>
   </div>
+
+  <!-- Email -->
   <div class="mb-4">
-   <label class="block text-gray-700">
-    Email
-   </label>
-   <input class="w-full p-2 border rounded-lg" type="email" value="user.africanies@mail.com"/>
+    <label class="block text-gray-700">Email</label>
+    <input formControlName="email" class="w-full p-2 border rounded-lg" type="email" />
+    <small *ngIf="addressForm.get('email')?.invalid && addressForm.get('email')?.touched" class="text-red-500">
+      Valid email is required.
+    </small>
   </div>
+
+  <!-- Phone -->
   <div class="mb-4 flex items-center">
-   <label class="block text-gray-700 mr-2">
-    Phone
-   </label>
-   <div class="flex items-center">
-    <select class="p-2 border rounded-lg mr-2">
-     <option>
-      +234
-     </option>
-    </select>
-    <input class="w-full p-2 border rounded-lg" type="text" value="817 685 2345"/>
-   </div>
+    <label class="block text-gray-700 mr-2">Phone</label>
+    <div class="flex items-center">
+      <select formControlName="phoneCode" class="p-2 border rounded-lg mr-2">
+        <option selected [value]="phoneCode">{{phoneCode}}<option>
+      </select>
+      <input formControlName="phoneNumber" class="w-full p-2 border rounded-lg" type="text" />
+    </div>
+    <small *ngIf="addressForm.get('phoneNumber')?.invalid && addressForm.get('phoneNumber')?.touched" class="text-red-500">
+      Phone number is required.
+    </small>
   </div>
+
+  <!-- Save Sender Info -->
   <div class="mb-4 flex items-center">
-   <input class="mr-2" type="checkbox"/>
-   <label class="text-gray-500">
-    Save Sender Info
-   </label>
+    <input formControlName="saveSenderInfo" class="mr-2" type="checkbox" />
+    <label class="text-gray-500">Save Sender Info</label>
   </div>
-  <button class="text-red-500"><i class="fa fa-trash"></i>
-   Clear form
-  </button>
- </div>
+
+  <button class="text-red-500" (click)="clearForm()"> <i class="fa fa-trash"></i> Clear form</button>
+</form>

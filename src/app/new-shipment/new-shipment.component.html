@@ -17,12 +17,14 @@
        SHIPMENT SUMMARY
       </button>
      </div>
-     <div class="grid grid-cols-2 gap-8">
-      <!-- Pickup From -->
-      <app-address></app-address>
-      <!-- Deliver To -->
-      <app-address></app-address>
-     </div>
+     <form [formGroup]="multistepForm" (ngSubmit)="submitForm()">
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Pickup From -->
+            <app-address [title]="'PICKUP FROM'" [addressForm]="addressForm"></app-address>
+            <!-- Deliver To -->
+            <app-address [title]="'DELIVER TO'" [addressForm]="addressForm"></app-address>
+           </div>
+     </form>
      <div class="flex justify-end mt-6">
       <button class="bg-green-500 text-white px-6 py-2 rounded-full">
        Proceed

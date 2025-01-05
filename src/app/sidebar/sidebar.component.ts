@@ -9,6 +9,11 @@ import { User } from '../models/user';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  @Input() user:User;
+  @Input() user: User;
+
+  toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('-translate-x-full');
+  }
 
 }
