@@ -95,8 +95,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 "Command not found" errors: Install Node.js and Angular CLI
 
-App not loading: Ensure the server is running (ng serve) and visit http://localhost:
-
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
