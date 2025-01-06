@@ -1,4 +1,4 @@
-# Africanies Shipping managemnet App
+# Africanies Shipping Management App
 ## Overview
 
 This is a simple Angular app built for Angular developer role take-home assignment. It includes:
