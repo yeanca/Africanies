@@ -19,6 +19,7 @@ export class AddressComponent implements OnInit {
   cityList: any[] = [];
   selectedCountryIso2: string = '';
   phoneCode: string = '';
+  
 
   constructor(private builder: FormBuilder, private shippingService: ShippingService) { }
 

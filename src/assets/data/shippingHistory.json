@@ -1,57 +1,167 @@
 [
-    {
+  {
       "id": 1,
       "trackingId": "#TVR-001",
-      "courier": "Not Selected",
-      "category": "Electronics",
-      "shippingDate": "2024-03-26",
+      "courier": "TNT",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
       "destination": "Lagos, Nigeria",
-      "weight": "18.5kg",
-      "cost": 2198,
-      "status": 1
-    },
-    {
+      "weight": "7.5kg",
+      "cost": 2298,
+      "status": 2
+  },
+  {
       "id": 2,
       "trackingId": "#TVR-002",
-      "courier": "DHL, Express",
+      "courier": "TNT",
       "category": "Electronics",
       "shippingDate": "2024-03-26",
       "destination": "Lagos, Nigeria",
-      "weight": "18.5kg",
-      "cost": 2198,
+      "weight": "9.5kg",
+      "cost": 2398,
+      "status": 4
+  },
+  {
+      "id": 3,
+      "trackingId": "#TVR-003",
+      "courier": "FedEx",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "11.5kg",
+      "cost": 2498,
       "status": 2
-    },
-    {
-      "id": 3,
-      "trackingId": "#TVR-003",
+  },
+  {
+      "id": 4,
+      "trackingId": "#TVR-004",
       "courier": "USPS",
       "category": "Electronics",
       "shippingDate": "2024-03-26",
       "destination": "Lagos, Nigeria",
-      "weight": "12.5kg",
-      "cost": 2198,
+      "weight": "13.5kg",
+      "cost": 2598,
       "status": 3
-    },
-    {
-      "id": 3,
-      "trackingId": "#TVR-003",
-      "courier": "USPS",
+  },
+  {
+      "id": 5,
+      "trackingId": "#TVR-005",
+      "courier": "UPS",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "15.5kg",
+      "cost": 2698,
+      "status": 3
+  },
+  {
+      "id": 6,
+      "trackingId": "#TVR-006",
+      "courier": "FedEx",
       "category": "Electronics",
       "shippingDate": "2024-03-26",
       "destination": "Lagos, Nigeria",
-      "weight": "12.5kg",
-      "cost": 2198,
-      "status": 3
-    },
-    {
-      "id": 3,
-      "trackingId": "#TVR-003",
-      "courier": "USPS",
+      "weight": "17.5kg",
+      "cost": 2798,
+      "status": 1
+  },
+  {
+      "id": 7,
+      "trackingId": "#TVR-007",
+      "courier": "Not Selected",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "19.5kg",
+      "cost": 2898,
+      "status":3
+  },
+  {
+      "id": 8,
+      "trackingId": "#TVR-008",
+      "courier": "DHL",
       "category": "Electronics",
       "shippingDate": "2024-03-26",
       "destination": "Lagos, Nigeria",
-      "weight": "12.5kg",
-      "cost": 2198,
+      "weight": "21.5kg",
+      "cost": 2998,
+      "status": 4
+  },
+  {
+      "id": 9,
+      "trackingId": "#TVR-009",
+      "courier": "DHL",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "23.5kg",
+      "cost": 3098,
+      "status": 1
+  },
+  {
+      "id": 10,
+      "trackingId": "#TVR-0010",
+      "courier": "Aramex",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "25.5kg",
+      "cost": 3198,
+      "status": 4
+  },
+  {
+      "id": 11,
+      "trackingId": "#TVR-0011",
+      "courier": "USPS",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "27.5kg",
+      "cost": 3298,
       "status": 3
-    }
-  ]
+  },
+  {
+      "id": 12,
+      "trackingId": "#TVR-0012",
+      "courier": "Aramex",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "29.5kg",
+      "cost": 3398,
+      "status": 2
+  },
+  {
+      "id": 13,
+      "trackingId": "#TVR-0013",
+      "courier": "FedEx",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "31.5kg",
+      "cost": 3498,
+      "status": 1
+  },
+  {
+      "id": 14,
+      "trackingId": "#TVR-0014",
+      "courier": "TNT",
+      "category": "Electronics",
+      "shippingDate": "2024-03-26",
+      "destination": "Lagos, Nigeria",
+      "weight": "33.5kg",
+      "cost": 3598,
+      "status": 3
+  },
+  {
+      "id": 15,
+      "trackingId": "#TVR-0015",
+      "courier": "TNT",
+      "category": "Clothing",
+      "shippingDate": "2024-05-14",
+      "destination": "Lagos, Nigeria",
+      "weight": "35.5kg",
+      "cost": 3698,
+      "status": 4
+  }
+]
