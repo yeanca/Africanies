@@ -1,5 +1,59 @@
-/* .sidebar{
-    position: fixed;
-    height: 100vh;
-    width: 256px;
-} */
+
+a {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+ 
+  .bg-green-700 {
+    background-color: #2f855a;
+  }
+  
+  .text-white {
+    color: #ffffff;
+  }
+  
+  
+  a:hover {
+    background-color: #38a169; 
+    color: white;
+  }
+
+  .sidebar {
+    transition: width 0.3s ease, padding 0.3s ease;
+  }
+  
+  .sidebar img {
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+  
+  .sidebar .hidden {
+    display: none;
+  }
+  
+  .sidebar .lg\\:hidden {
+    display: none;
+  }
+  
+  .sidebar a {
+    padding-left: 8px;
+  }
+  
+  .sidebar .w-16 {
+    width: 4rem; /* Set collapsed width */
+  }
+  
+  .sidebar .w-64 {
+    width: 16rem; /* Set expanded width */
+  }
+  
+  .sidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  .sidebar button i {
+    font-size: 1.5rem;
+  }
+  

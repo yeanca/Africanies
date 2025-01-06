@@ -7,61 +7,96 @@
 </button>
 
 <!-- Sidebar -->
-<div class="sidebar fixed top-0 left-0 h-screen w-64 bg-white p-4 flex flex-col transition-transform transform -translate-x-full lg:translate-x-0 z-40">
-  <div class="flex items-center mb-8">
+<div  class="sidebar fixed top-0 left-0 h-screen bg-white p-4 flex flex-col transition-all duration-300 ease-in-out z-40">
+  <div class="flex items-center mb-8 justify-between">
     <img
       alt="Company Logo"
       src="../../assets/img/Africanisfull_horizontal.png"
+      class="transition-all duration-300 ease-in-out"
+      [class.hidden]="isSidebarCollapsed"
     />
-    <div>
-      <!-- <h1 class="text-lg font-bold">AFRICAN IMPORT &amp; EXPORT SOLUTIONS</h1> -->
-    </div>
+    <!-- <button
+      class="text-gray-600 lg:hidden"
+      (click)="sidebar()"
+    >
+      <i class="fa" [ngClass]="isSidebarCollapsed ? 'fa-arrow-left' : 'fa-arrow-left'"></i>
+    </button> -->
   </div>
+
   <nav class="flex-1 text-gray-600">
     <ul>
       <li class="mb-4">
-        <a class="flex items-center p-2 bg-green-700 text-white rounded" href="#">
-          <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+        <a
+          [routerLink]="'/dashboard'"
+          routerLinkActive="bg-green-700 text-white"
+          class="flex items-center p-2 rounded transition-all"
+        >
+          <i class="fas fa-tachometer-alt mr-2"></i>
+          <span *ngIf="!isSidebarCollapsed">Dashboard</span>
         </a>
       </li>
       <li class="mb-4">
-        <a class="flex items-center p-2 rounded-full" href="#">
-          <i class="fas fa-shipping-fast mr-2"></i> Shipment
+        <a
+          [routerLink]="'/new-shipment'"
+          routerLinkActive="bg-green-700 text-white"
+          class="flex items-center p-2 rounded transition-all"
+        >
+          <i class="fas fa-shipping-fast mr-2"></i>
+          <span *ngIf="!isSidebarCollapsed">Shipment</span>
         </a>
       </li>
       <li class="mb-4">
-        <a class="flex items-center p-2 rounded-full" href="#">
-          <i class="fas fa-box-open mr-2"></i> Deliveries
+        <a
+          [routerLink]="'/deliveries'"
+          routerLinkActive="bg-green-700 text-white"
+          class="flex items-center p-2 rounded transition-all"
+        >
+          <i class="fas fa-box-open mr-2"></i>
+          <span *ngIf="!isSidebarCollapsed">Deliveries</span>
         </a>
       </li>
       <li class="mb-4">
-        <a class="flex items-center p-2 rounded-full" href="#">
-          <i class="fas fa-chart-line mr-2"></i> Analytics
+        <a
+          [routerLink]="'/analytics'"
+          routerLinkActive="bg-green-700 text-white"
+          class="flex items-center p-2 rounded transition-all"
+        >
+          <i class="fas fa-chart-line mr-2"></i>
+          <span *ngIf="!isSidebarCollapsed">Analytics</span>
         </a>
       </li>
       <li class="mb-4">
-        <a class="flex items-center p-2 rounded-full" href="#">
-          <i class="fas fa-bell mr-2"></i> Notifications
-          <span class="ml-auto bg-red-500 text-white rounded-full px-2 py-1 text-xs">10</span>
+        <a
+          [routerLink]="'/notifications'"
+          routerLinkActive="bg-green-700 text-white"
+          class="flex items-center p-2 rounded transition-all"
+        >
+          <i class="fas fa-bell mr-2"></i>
+          <span *ngIf="!isSidebarCollapsed">Notifications</span>
+          <span class="ml-auto bg-red-500 text-white rounded-full px-2 py-1 text-xs">
+            10
+          </span>
         </a>
       </li>
     </ul>
   </nav>
+
   <div class="mt-auto">
     <a class="flex items-center p-2 rounded-full" href="#">
-      <i class="fas fa-cog mr-2"></i> Settings
+      <i class="fas fa-cog mr-2"></i>
+      <span *ngIf="!isSidebarCollapsed">Settings</span>
     </a>
     <div class="flex items-center mt-4">
       <img
         alt="User Avatar"
         class="w-10 h-10 rounded-full mr-2"
-        src="{{user.avatar}}"
+        src="{{ user.avatar }}"
         width="40"
         height="40"
       />
       <div>
-        <p class="text-sm">{{user.firstname + ' ' + user.lastname}}</p>
-        <p class="text-xs text-gray-300">{{user.email}}</p>
+        <p class="text-sm">{{ user.firstname + ' ' + user.lastname }}</p>
+        <p class="text-xs text-gray-300">{{ user.email }}</p>
       </div>
     </div>
   </div>

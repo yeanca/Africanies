@@ -1,7 +1,7 @@
 # Africanies Shipping managemnet App
 ## Overview
 
-This is a simple Angular app built for a developer role take-home assignment. It includes:
+This is a simple Angular app built for Angular developer role take-home assignment. It includes:
 
 A Dashboard showing shipping information.
 

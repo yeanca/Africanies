@@ -8,7 +8,7 @@ import { Warehouse } from '../models/warehouse';
   providedIn: 'root'
 })
 export class ShippingService {
-  shipmentAPIKey = 'aVB0V1owMHMyWmVTMktMOENreTRpeUdNSkRVNUV6QkRUTlNRZk11cw==';
+  shipmentAPIKey = ''; //aVB0V1owMHMyWmVTMktMOENreTRpeUdNSkRVNUV6QkRUTlNRZk11cw==
   shipmentURL = 'https://api.countrystatecity.in/v1/countries';
 
   constructor(private http: HttpClient) { }

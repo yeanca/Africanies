@@ -5,7 +5,6 @@ import { ShippingService } from '../services/shipping.service';
 import { Warehouse } from '../models/warehouse';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { User } from '../models/user';
 
 @Component({
